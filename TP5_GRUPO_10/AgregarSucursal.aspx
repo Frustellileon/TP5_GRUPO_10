@@ -16,15 +16,6 @@
         .auto-style3 {
             width: 88px;
         }
-        .auto-style6 {
-            width: 210px;
-        }
-        .auto-style7 {
-            width: 177px;
-        }
-        .auto-style8 {
-            width: 165px;
-        }
         .auto-style9 {
             width: 88px;
             height: 40px;
@@ -36,6 +27,15 @@
         .auto-style11 {
             height: 40px;
         }
+        .auto-style13 {
+            width: 340px;
+        }
+        .auto-style14 {
+            width: 234px;
+        }
+        .auto-style15 {
+            width: 169px;
+        }
     </style>
 </head>
 <body>
@@ -43,9 +43,11 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style8">&nbsp;</td>
-                    <td class="auto-style6"></td>
-                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
+                    <td class="auto-style15">
+                        <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="~/AgregarSucursal.aspx">AgregarSucursal</asp:HyperLink>
+                    </td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
