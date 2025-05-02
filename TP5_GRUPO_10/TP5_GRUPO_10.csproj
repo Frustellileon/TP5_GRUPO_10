@@ -78,6 +78,7 @@
     <Compile Include="AgregarSucursal.aspx.designer.cs">
       <DependentUpon>AgregarSucursal.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ClaseSQL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
