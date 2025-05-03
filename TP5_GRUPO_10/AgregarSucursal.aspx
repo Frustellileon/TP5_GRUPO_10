@@ -47,6 +47,17 @@
         .auto-style18 {
             height: 26px;
         }
+        .auto-style19 {
+            width: 88px;
+            height: 23px;
+        }
+        .auto-style20 {
+            width: 244px;
+            height: 23px;
+        }
+        .auto-style21 {
+            height: 23px;
+        }
     </style>
 </head>
 <body>
@@ -127,7 +138,10 @@
                 <tr>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">Provincia:</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:DropDownList ID="ddlProvincias" runat="server">
+                        </asp:DropDownList>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -165,11 +179,11 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style19"></td>
+                    <td class="auto-style20"></td>
+                    <td class="auto-style21"></td>
+                    <td class="auto-style21"></td>
+                    <td class="auto-style21"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">&nbsp;</td>
