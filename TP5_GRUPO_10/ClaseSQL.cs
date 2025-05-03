@@ -22,7 +22,6 @@ namespace TP5_GRUPO_10
         //Constructor de la clase
         public ClaseSQL()
         {
-            cadenaConexion = cadenaConexion;
             conexion = new SqlConnection(cadenaConexion);
             estado = false;
         }
