@@ -58,6 +58,17 @@
         .auto-style21 {
             height: 23px;
         }
+        .auto-style22 {
+            width: 88px;
+            height: 30px;
+        }
+        .auto-style23 {
+            width: 244px;
+            height: 30px;
+        }
+        .auto-style24 {
+            height: 30px;
+        }
     </style>
 </head>
 <body>
@@ -129,21 +140,22 @@
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">Descripcion:</td>
                     <td>
-                        <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtDescripcion" runat="server" Height="33px" TextMode="MultiLine" Width="128px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion">Ingrese una descripcion</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style2">Provincia:</td>
-                    <td>
+                    <td class="auto-style22"></td>
+                    <td class="auto-style23">Provincia:</td>
+                    <td class="auto-style24">
                         <asp:DropDownList ID="ddlProvincias" runat="server">
                         </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvDdlProvincia" runat="server" ControlToValidate="ddlProvincias" ErrorMessage="RequiredFieldValidator" InitialValue="0">Elija una opcion</asp:RequiredFieldValidator>
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style24"></td>
+                    <td class="auto-style24"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">&nbsp;</td>
