@@ -33,13 +33,13 @@ namespace TP5_GRUPO_10
         protected global::System.Web.UI.WebControls.HyperLink hlAgregarSucursal;
 
         /// <summary>
-        /// Control hlListadoSucursales.
+        /// Control HyperLink1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlListadoSucursales;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
 
         /// <summary>
         /// Control lblGrupo.
