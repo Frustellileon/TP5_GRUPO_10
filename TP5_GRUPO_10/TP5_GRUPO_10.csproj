@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgregarSucursal.aspx" />
+    <Content Include="ListadoSucursales.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +80,13 @@
       <DependentUpon>AgregarSucursal.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClaseSQL.cs" />
+    <Compile Include="ListadoSucursales.aspx.cs">
+      <DependentUpon>ListadoSucursales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListadoSucursales.aspx.designer.cs">
+      <DependentUpon>ListadoSucursales.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
