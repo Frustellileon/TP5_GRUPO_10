@@ -10,8 +10,7 @@ namespace TP5_GRUPO_10
     public class ClaseSQL
     {
         ///Atributos de la clase
-        private string cadenaConexion = "";
-        private SqlConnection conexion;
+        private string cadenaConexion = "Data Source=DELL-NAHUEL\\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"; private SqlConnection conexion;
         private SqlCommand sqlCommand;
         private SqlDataReader sqlDataReader;
         private SqlDataAdapter sqlDataAdapter;
@@ -21,13 +20,32 @@ namespace TP5_GRUPO_10
         ///----------------------------------------------------------  Funciones de la clase  --------------------------------------------------------------------------
 
         //Constructor de la clase
-        public ClaseSQL(string cadena)
+        public ClaseSQL()
         {
-            //Remplaza la url de la coneccion
-            cadenaConexion = cadena;
-
-            //Seteo por las dudas el estado inicial en desconectado
+            cadenaConexion = cadenaConexion;
+            conexion = new SqlConnection(cadenaConexion);
             estado = false;
         }
+
+        public void AbrirConexion()
+        {
+            conexion.Open();
+            estado = true;
+        }
+
+        public void CerrarConexion()
+        {
+            conexion.Close();
+            estado = false;
+        }
+
+        public DataSet CargarGridView(string consultaSQL)
+        {
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(consultaSQL, conexion);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            return dataSet;
+        }
+
     }
 }
