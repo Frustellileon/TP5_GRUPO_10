@@ -109,6 +109,7 @@
                     <td class="auto-style2">Nombre Sucursal:</td>
                     <td>
                         <asp:TextBox ID="txtNombreSucursal" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal">Ingrese un nombre de sucursal</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -118,6 +119,7 @@
                     <td class="auto-style2">Descripcion:</td>
                     <td>
                         <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion">Ingrese una descripcion</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -134,6 +136,7 @@
                     <td class="auto-style2">Direccion:</td>
                     <td>
                         <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion">Ingrese una direccion</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
