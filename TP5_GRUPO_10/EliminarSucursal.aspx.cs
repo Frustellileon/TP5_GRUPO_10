@@ -13,5 +13,10 @@ namespace TP5_GRUPO_10
         {
 
         }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
