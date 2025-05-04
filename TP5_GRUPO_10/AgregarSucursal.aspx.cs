@@ -49,14 +49,17 @@ namespace TP5_GRUPO_10
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            //Variables SQL necesarias
             ClaseSQL conexion = new ClaseSQL();
-
             string consulta = "Insert into Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES ('" + txtNombreSucursal.Text + "', '" + txtDescripcion.Text + "', " + ddlProvincias.SelectedValue + ", '" + txtDireccion.Text + "')";
             filasAfectadas = conexion.ejecutarConsulta(consulta);
 
+            //Pregunto si se ejecutaron los cambios
             if (filasAfectadas == 1)
             {
-                //lblMensaje.Text = "Sucursal agregada correctamente";
+                //Mensaje al usuario
+                lblMensaje.Text = "Sucursal agregada correctamente";
+                
                 //txtNombreSucursal.Text = string.Empty;
                 //txtDescripcion.Text = string.Empty;
                 //txtDireccion.Text = string.Empty;
@@ -67,12 +70,9 @@ namespace TP5_GRUPO_10
             }
             else
             {
-                //lblMensaje.Text = "No se pudo agregar la sucursal. Volver a intentar";
+                //Mensaje de error en caso de que no se cargue la base de datos
+                lblMensaje.Text = "No se pudo agregar la sucursal. Volver a intentar";
             }
         }
-
-
-
-
     }
 }
