@@ -18,7 +18,7 @@ namespace TP5_GRUPO_10
         private SqlDataAdapter sqlDataAdapter;
         private DataSet dataSet;
         private bool estado = false; //Serviria como control para saber si la conexion esta abierta o cerrada
-        int filasAfectadas;
+        private int filasAfectadas;
 
         ///----------------------------------------------------------  Funciones de la clase  --------------------------------------------------------------------------
 

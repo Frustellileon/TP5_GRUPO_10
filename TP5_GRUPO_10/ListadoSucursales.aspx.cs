@@ -10,7 +10,7 @@ namespace TP5_GRUPO_10
 {
     public partial class ListadoSucursales : System.Web.UI.Page
     { 
-        private string consultaSQL = "SELECT * FROM Sucursal";
+        private string consultaSQL = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal = Id_Provincia";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,6 +33,10 @@ namespace TP5_GRUPO_10
             }
         }
 
-
+        //Evento click boton filtrado
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            //Cuando este hecho metan el metodo de filtrado aca.
+        }
     }
 }
