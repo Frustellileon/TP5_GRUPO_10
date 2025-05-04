@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace TP5_GRUPO_10
 {
     public partial class ListadoSucursales : System.Web.UI.Page
@@ -36,7 +37,22 @@ namespace TP5_GRUPO_10
         //Evento click boton filtrado
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            //Cuando este hecho metan el metodo de filtrado aca.
+            string idSucursal = txtIdSucursal.Text;
+
+            ClaseSQL claseSQL = new ClaseSQL();
+            gvSucursales.DataSource = claseSQL.FiltrarSucursalPorId(idSucursal).Tables[0];
+            gvSucursales.DataBind();
+        }
+
+        protected void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            ClaseSQL claseSQL = new ClaseSQL();
+            claseSQL.AbrirConexion();
+
+            gvSucursales.DataSource = claseSQL.CargarGridView(consultaSQL).Tables[0];
+            gvSucursales.DataBind();
+
+            claseSQL.CerrarConexion();
         }
     }
 }

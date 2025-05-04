@@ -112,7 +112,9 @@
                     <td class="auto-style15">
                         <asp:Button ID="btnFiltrar" runat="server" OnClick="btnFiltrar_Click" Text="Filtrar" ValidationGroup="Filtro" Width="69px" />
                     </td>
-                    <td class="auto-style16"></td>
+                    <td class="auto-style16">
+                        <asp:Button ID="btnMostrarTodos" runat="server" OnClick="btnMostrarTodos_Click" Text="Mostrar todos" />
+                    </td>
                     <td class="auto-style16"></td>
                     <td class="auto-style16"></td>
                 </tr>
