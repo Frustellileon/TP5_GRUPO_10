@@ -57,9 +57,7 @@ namespace TP5_GRUPO_10
             //Pregunto si se ejecutaron los cambios
             if (filasAfectadas == 1)
             {
-                //Mensaje al usuario
-                lblMensaje.Text = "Sucursal agregada correctamente";
-                
+                //lblMensaje.Text = "Sucursal agregada correctamente";
                 //txtNombreSucursal.Text = string.Empty;
                 //txtDescripcion.Text = string.Empty;
                 //txtDireccion.Text = string.Empty;
@@ -70,8 +68,7 @@ namespace TP5_GRUPO_10
             }
             else
             {
-                //Mensaje de error en caso de que no se cargue la base de datos
-                lblMensaje.Text = "No se pudo agregar la sucursal. Volver a intentar";
+                //lblMensaje.Text = "No se pudo agregar la sucursal. Volver a intentar";
             }
         }
     }
