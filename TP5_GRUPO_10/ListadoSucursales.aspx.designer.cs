@@ -69,6 +69,24 @@ namespace TP5_GRUPO_10
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIdSucursal;
 
         /// <summary>
+        /// Control cv_IdInexistente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cv_IdInexistente;
+
+        /// <summary>
+        /// Control rev_VNumerico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_VNumerico;
+
+        /// <summary>
         /// Control btnFiltrar.
         /// </summary>
         /// <remarks>

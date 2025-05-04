@@ -110,12 +110,16 @@
                         <asp:RequiredFieldValidator ID="rfvIdSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="Para usar el filtro debe añadir un valor al campo ID sucursal." ValidationGroup="Filtro">*</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style15">
+                        &nbsp;&nbsp;<asp:CustomValidator ID="cv_IdInexistente" runat="server" ControlToValidate="txtIdSucursal" Display="Dynamic" ErrorMessage="El ID ingresado no existe." OnServerValidate="cv_IsInexistente_ServerValidate" ValidationGroup="Filtro">*</asp:CustomValidator>
+&nbsp;
+                        <asp:RegularExpressionValidator ID="rev_VNumerico" runat="server" ControlToValidate="tb_BuscarS" Display="Dynamic" ValidationExpression="^[0-9]+$" ValidationGroup="Filtro" ErrorMessage="El ID deve ser numerico.">*</asp:RegularExpressionValidator>
+                    </td>
+                    <td class="auto-style16">
                         <asp:Button ID="btnFiltrar" runat="server" OnClick="btnFiltrar_Click" Text="Filtrar" ValidationGroup="Filtro" Width="69px" />
                     </td>
                     <td class="auto-style16">
                         <asp:Button ID="btnMostrarTodos" runat="server" OnClick="btnMostrarTodos_Click" Text="Mostrar todos" />
                     </td>
-                    <td class="auto-style16"></td>
                     <td class="auto-style16"></td>
                 </tr>
                 <tr>

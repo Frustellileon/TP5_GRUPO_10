@@ -54,9 +54,8 @@ namespace TP5_GRUPO_10
             //Pregunto si se ejecutaron los cambios
             if (filasAfectadas == 1)
             {
-<<<<<<< HEAD
                 lblMensaje.Text = "Sucursal agregada correctamente";
-=======
+            }
 
                 LimpiarCampos();
 
@@ -64,7 +63,6 @@ namespace TP5_GRUPO_10
             else
             {
             
->>>>>>> Aportes Ejercicio 1 (validaciones - limpiado campos)
             }
         }
 

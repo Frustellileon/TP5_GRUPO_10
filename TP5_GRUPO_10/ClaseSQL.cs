@@ -11,7 +11,7 @@ namespace TP5_GRUPO_10
     public class ClaseSQL
     {
         ///Atributos de la clase
-        private string cadenaConexion = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"; 
+        private string c = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"; 
         private SqlConnection conexion;
         private SqlCommand sqlCommand;
         private SqlDataReader sqlDataReader;
@@ -63,6 +63,7 @@ namespace TP5_GRUPO_10
             
         }
 
+<<<<<<< HEAD
         public SqlDataReader EjecutarConsultaLectura(string consulta)
         {
             AbrirConexion();
@@ -99,6 +100,26 @@ namespace TP5_GRUPO_10
             sqlCommand.ExecuteNonQuery();
             //Cierro coneccion
             CerrarConexion();
+        }
+
+
+=======
+>>>>>>> Validaciones Ejercicio 2 (Es numerico e ID existente) - Se incorpora en la ClaseSQL el metodo para validar existencia de ID .
+        public bool IdSucursal_Existe(int ID)
+        {
+            bool existe = false;
+            string consultaSQL = "Select id_Sucursal From Sucursal Where id_Sucursal = @ID";
+            sqlCommand = new SqlCommand(consultaSQL, conexion);
+            sqlCommand.Parameters.AddWithValue("@ID", ID);
+            AbrirConexion();
+            sqlDataReader = sqlCommand.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                existe = true;
+            }
+            sqlDataReader.Close();
+            CerrarConexion();
+            return existe;
         }
     }
 }
