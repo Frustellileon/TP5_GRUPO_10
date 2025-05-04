@@ -5,12 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using TP5_GRUPO_10;
 
 namespace TP5_GRUPO_10
 {
     public partial class AgregarSucursal : System.Web.UI.Page
     {
+
         int filasAfectadas;
+        ClaseSQL claseSQL = new ClaseSQL();  // instancia global de la clase para toda la página
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,28 +28,21 @@ namespace TP5_GRUPO_10
 
         private void CargarProvincias()
         {
-            string connectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True";
+            string consulta = "SELECT Id_Provincia, DescripcionProvincia FROM Provincia ORDER BY DescripcionProvincia";
 
-            string query = "SELECT Id_Provincia, DescripcionProvincia FROM Provincia ORDER BY DescripcionProvincia";
+            SqlDataReader reader = claseSQL.EjecutarConsultaLectura(consulta);
 
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                SqlCommand cmd = new SqlCommand(query, con);
-                con.Open();
+            ddlProvincias.DataSource = reader;
+            ddlProvincias.DataTextField = "DescripcionProvincia";
+            ddlProvincias.DataValueField = "Id_Provincia";
+            ddlProvincias.DataBind();
 
-                SqlDataReader reader = cmd.ExecuteReader();
+            reader.Close(); /// cerramos el data reader primero
+            claseSQL.CerrarConexion(); /// Y después la conexión
 
-                ddlProvincias.DataSource = reader;
-                ddlProvincias.DataTextField = "DescripcionProvincia"; // lo que se muestra en pantalla
-                ddlProvincias.DataValueField = "Id_Provincia";        // el ID que se guarda
-                ddlProvincias.DataBind();
-
-                con.Close();
-            }
-            
-            // Agregamos la opción inicial
             ddlProvincias.Items.Insert(0, new ListItem("--Seleccione una provincia--", "0"));
         }
+
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {

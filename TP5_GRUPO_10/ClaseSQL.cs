@@ -62,5 +62,15 @@ namespace TP5_GRUPO_10
             return filasAfectadas;
             
         }
+
+        public SqlDataReader EjecutarConsultaLectura(string consulta)
+        {
+            AbrirConexion();
+            sqlCommand = new SqlCommand(consulta, conexion);
+            sqlDataReader = sqlCommand.ExecuteReader();
+            return sqlDataReader;
+        }
     }
 }
+
+
