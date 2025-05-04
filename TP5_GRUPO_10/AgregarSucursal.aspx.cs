@@ -54,8 +54,26 @@ namespace TP5_GRUPO_10
             //Pregunto si se ejecutaron los cambios
             if (filasAfectadas == 1)
             {
+<<<<<<< HEAD
                 lblMensaje.Text = "Sucursal agregada correctamente";
+=======
+
+                LimpiarCampos();
+
             }
+            else
+            {
+            
+>>>>>>> Aportes Ejercicio 1 (validaciones - limpiado campos)
+            }
+        }
+
+        protected void LimpiarCampos()
+        {
+            txtNombreSucursal.Text = string.Empty;
+            txtDescripcion.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            ddlProvincia.SelectedIndex = 0;
         }
     }
 }

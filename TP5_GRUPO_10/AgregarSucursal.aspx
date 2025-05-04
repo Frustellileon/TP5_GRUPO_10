@@ -69,6 +69,17 @@
         .auto-style24 {
             height: 30px;
         }
+        .auto-style25 {
+            width: 88px;
+            height: 75px;
+        }
+        .auto-style26 {
+            width: 244px;
+            height: 75px;
+        }
+        .auto-style27 {
+            height: 75px;
+        }
     </style>
 </head>
 <body>
@@ -130,8 +141,12 @@
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">Nombre Sucursal:</td>
                     <td>
-                        <asp:TextBox ID="txtNombreSucursal" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal">Ingrese un nombre de sucursal</asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtNombreSucursal" runat="server" ValidationGroup="GrupoA"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal" Display="Dynamic" ErrorMessage="Ingrese un nombre de sucursal." ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
+                    &nbsp;
+                        <asp:RegularExpressionValidator ID="revNombreS_valido" runat="server" ControlToValidate="txtNombreSucursal" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado contiene caracteres invalidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ '.\-]+$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
+&nbsp;
+                        <asp:RegularExpressionValidator ID="revNombreS_largo" runat="server" ControlToValidate="txtNombreSucursal" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado es demaciado corto/largo." ValidationExpression="^[\s\S]{5,50}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -140,8 +155,12 @@
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">Descripcion:</td>
                     <td>
-                        <asp:TextBox ID="txtDescripcion" runat="server" Height="33px" TextMode="MultiLine" Width="128px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion">Ingrese una descripcion</asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtDescripcion" runat="server" Height="33px" TextMode="MultiLine" Width="128px" ValidationGroup="GrupoA"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="Ingrese una descripcion." ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
+                    &nbsp;
+                        <asp:RegularExpressionValidator ID="revDescripcion_valido" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="La descripcion ingresada contiene caracteres invalidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ .,;'\-()]+$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
+&nbsp;
+                        <asp:RegularExpressionValidator ID="revDescripcion_largo" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="La descripcion ingresada es demaciado corta/larga." ValidationExpression="^[\s\S]{10,200}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -150,9 +169,9 @@
                     <td class="auto-style22"></td>
                     <td class="auto-style23">Provincia:</td>
                     <td class="auto-style24">
-                        <asp:DropDownList ID="ddlProvincias" runat="server">
+                        <asp:DropDownList ID="ddlProvincias" runat="server" ValidationGroup="GrupoA">
                         </asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="rfvDdlProvincia" runat="server" ControlToValidate="ddlProvincias" ErrorMessage="RequiredFieldValidator" InitialValue="0">Elija una opcion</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvDdlProvincia" runat="server" ControlToValidate="ddlProvincias" ErrorMessage="Elija una opcion de provincia." InitialValue="0" Display="Dynamic" ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style24"></td>
                     <td class="auto-style24"></td>
@@ -161,8 +180,12 @@
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">Direccion:</td>
                     <td>
-                        <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion">Ingrese una direccion</asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtDireccion" runat="server" ValidationGroup="GrupoA"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="Ingrese una direccion." ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
+                    &nbsp;
+                        <asp:RegularExpressionValidator ID="revDireccion_valida" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="La dirección ingresada solo puede contener letras, números, espacios, comas, puntos o guiones, y debe incluir al menos un número." ValidationExpression="^(?=.*\d)[a-zA-Z0-9\s,.-]+$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
+&nbsp;
+                        <asp:RegularExpressionValidator ID="revDireccion_largo" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="La direccion ingresada es demacioado corta/larga." ValidationExpression="^[\s\S]{10,100}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -175,17 +198,19 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>
-                        <asp:Button ID="btnAceptar" runat="server" Height="29px" Width="86px" Text="Aceptar" OnClick="btnAceptar_Click" />
+                    <td class="auto-style25"></td>
+                    <td class="auto-style26"></td>
+                    <td class="auto-style27">
+                        <asp:Button ID="btnAceptar" runat="server" Height="29px" Width="86px" Text="Aceptar" OnClick="btnAceptar_Click" ValidationGroup="GrupoA" />
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style27"></td>
+                    <td class="auto-style27"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2">
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="GrupoA" />
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
