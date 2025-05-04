@@ -42,7 +42,7 @@
             width: 85px;
         }
         .auto-style11 {
-            width: 217px;
+            width: 170px;
         }
         .auto-style12 {
             width: 260px;
@@ -71,7 +71,9 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style11">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
