@@ -4,18 +4,21 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Reflection.Emit;
 
 namespace TP5_GRUPO_10
 {
     public class ClaseSQL
     {
         ///Atributos de la clase
-        private string cadenaConexion = "Data Source=DELL-NAHUEL\\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"; private SqlConnection conexion;
+        private string cadenaConexion = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"; 
+        private SqlConnection conexion;
         private SqlCommand sqlCommand;
         private SqlDataReader sqlDataReader;
         private SqlDataAdapter sqlDataAdapter;
         private DataSet dataSet;
         private bool estado = false; //Serviria como control para saber si la conexion esta abierta o cerrada
+        int filasAfectadas;
 
         ///----------------------------------------------------------  Funciones de la clase  --------------------------------------------------------------------------
 
@@ -46,5 +49,18 @@ namespace TP5_GRUPO_10
             return dataSet;
         }
 
+        public int ejecutarConsulta(string consulta)
+        {   
+            
+            AbrirConexion();
+
+            sqlCommand = new SqlCommand(consulta, conexion);
+            filasAfectadas = sqlCommand.ExecuteNonQuery();
+
+            CerrarConexion();
+
+            return filasAfectadas;
+            
+        }
     }
 }

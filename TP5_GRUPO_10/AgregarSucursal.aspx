@@ -178,7 +178,7 @@
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
                     <td>
-                        <asp:Button ID="btnACeptar" runat="server" Height="29px" Text="Aceptar" Width="86px" />
+                        <asp:Button ID="btnAceptar" runat="server" Height="29px" Width="86px" Text="Aceptar" OnClick="btnAceptar_Click" />
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -193,7 +193,9 @@
                 <tr>
                     <td class="auto-style19"></td>
                     <td class="auto-style20"></td>
-                    <td class="auto-style21"></td>
+                    <td class="auto-style21">
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                    </td>
                     <td class="auto-style21"></td>
                     <td class="auto-style21"></td>
                 </tr>

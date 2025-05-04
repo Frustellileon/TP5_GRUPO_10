@@ -10,6 +10,8 @@ namespace TP5_GRUPO_10
 {
     public partial class AgregarSucursal : System.Web.UI.Page
     {
+        int filasAfectadas;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             System.Web.UI.ValidationSettings.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
@@ -40,12 +42,31 @@ namespace TP5_GRUPO_10
 
                 con.Close();
             }
-
+            
             // Agregamos la opción inicial
             ddlProvincias.Items.Insert(0, new ListItem("--Seleccione una provincia--", "0"));
         }
 
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            ClaseSQL conexion = new ClaseSQL();
 
+            string consulta = "Insert into Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES ('" + txtNombreSucursal.Text + "', '" + txtDescripcion.Text + "', " + ddlProvincias.SelectedValue + ", '" + txtDireccion.Text + "')";
+            filasAfectadas = conexion.ejecutarConsulta(consulta);
+
+            if (filasAfectadas == 1)
+            {
+                lblMensaje.Text = "Sucursal agregada correctamente";
+                txtNombreSucursal.Text = string.Empty;
+                txtDescripcion.Text = string.Empty;
+                txtDireccion.Text = string.Empty;
+                ddlProvincias.SelectedIndex = 0;
+            }
+            else
+            {
+                lblMensaje.Text = "No se pudo agregar la sucursal. Volver a intentar";
+            }
+        }
 
 
 
