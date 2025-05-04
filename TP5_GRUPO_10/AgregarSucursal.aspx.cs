@@ -56,15 +56,18 @@ namespace TP5_GRUPO_10
 
             if (filasAfectadas == 1)
             {
-                lblMensaje.Text = "Sucursal agregada correctamente";
-                txtNombreSucursal.Text = string.Empty;
-                txtDescripcion.Text = string.Empty;
-                txtDireccion.Text = string.Empty;
-                ddlProvincias.SelectedIndex = 0;
+                //lblMensaje.Text = "Sucursal agregada correctamente";
+                //txtNombreSucursal.Text = string.Empty;
+                //txtDescripcion.Text = string.Empty;
+                //txtDireccion.Text = string.Empty;
+                //ddlProvincias.SelectedIndex = 0;
+
+                //lo comentado no me corresponde. Si quieren lo pueden
+                //borrar o dejarlo (en el post que subí no está expuesto) 
             }
             else
             {
-                lblMensaje.Text = "No se pudo agregar la sucursal. Volver a intentar";
+                //lblMensaje.Text = "No se pudo agregar la sucursal. Volver a intentar";
             }
         }
 
