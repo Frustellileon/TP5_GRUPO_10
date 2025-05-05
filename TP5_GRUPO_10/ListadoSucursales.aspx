@@ -84,7 +84,9 @@
                         <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
                     </td>
                     <td class="auto-style20">&nbsp;</td>
-                    <td class="auto-style21">&nbsp;</td>
+                    <td class="auto-style21">
+                        <asp:HyperLink ID="hlEliminarSucursal" runat="server" NavigateUrl="EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
