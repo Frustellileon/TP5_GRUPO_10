@@ -160,7 +160,7 @@
                     &nbsp;
                         <asp:RegularExpressionValidator ID="revDescripcion_valido" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="La descripcion ingresada contiene caracteres invalidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ .,;'\-()]+$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
 &nbsp;
-                        <asp:RegularExpressionValidator ID="revDescripcion_largo" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="La descripcion ingresada es demaciado corta/larga." ValidationExpression="^[\s\S]{10,200}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revDescripcion_largo" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="La descripcion ingresada es demaciado corta/larga." ValidationExpression="^[\s\S]{5,200}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

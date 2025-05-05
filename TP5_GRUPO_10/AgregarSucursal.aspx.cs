@@ -71,7 +71,7 @@ namespace TP5_GRUPO_10
             txtNombreSucursal.Text = string.Empty;
             txtDescripcion.Text = string.Empty;
             txtDireccion.Text = string.Empty;
-            ddlProvincia.SelectedIndex = 0;
+            ddlProvincias.SelectedIndex = 0;
         }
     }
 }

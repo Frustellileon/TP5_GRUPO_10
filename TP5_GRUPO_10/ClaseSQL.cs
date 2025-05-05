@@ -11,7 +11,7 @@ namespace TP5_GRUPO_10
     public class ClaseSQL
     {
         ///Atributos de la clase
-        private string c = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"; 
+        private string cadenaConexion = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"; 
         private SqlConnection conexion;
         private SqlCommand sqlCommand;
         private SqlDataReader sqlDataReader;
