@@ -9,6 +9,7 @@ namespace TP5_GRUPO_10
 {
     public partial class EliminarSucursal : System.Web.UI.Page
     {
+        ClaseSQL claseSQL = new ClaseSQL();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -17,7 +18,7 @@ namespace TP5_GRUPO_10
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            
 
 
             // Limpio el textbox

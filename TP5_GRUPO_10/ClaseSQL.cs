@@ -90,16 +90,18 @@ namespace TP5_GRUPO_10
             return ds;
         }
 
-        public void EliminarDato(string idSucursal)
+        public int EliminarDato(string idSucursal)
         {
+            int resultado = 0;
             //Abro coneccion
             AbrirConexion();
             //Mando el comando que quiero que ejecute (borrar con el dato recibido)
             sqlCommand = new SqlCommand("DELETE FROM Sucursal WHERE Id_Sucursal = " + idSucursal.Trim(), conexion);
             //Ejecuto la consulta
-            sqlCommand.ExecuteNonQuery();
+            resultado = sqlCommand.ExecuteNonQuery();
             //Cierro coneccion
             CerrarConexion();
+            return resultado;
         }
 
 
