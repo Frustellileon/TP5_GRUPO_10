@@ -24,7 +24,7 @@ namespace TP5_GRUPO_10
                 int resultadoOperacion = claseSQL.EliminarDato(txtIngresarIdSucursal.Text);
                 if (resultadoOperacion == 1)
                 {
-                   
+                    lblConfirmacion.Text = "La sucursal se ha eliminado con éxito";
                 }
                 else
                 {

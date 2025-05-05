@@ -81,7 +81,7 @@ namespace TP5_GRUPO_10
                 }
                 else
                 {
-                    lblMensaje.Text = "Se pudo acceder a los registros de la base de datos con exito.";
+                    lblMensaje.Text = "Se pudo acceder a los registros de la base de datos con éxito.";
                 }
                 LimpiarCampos();
             }

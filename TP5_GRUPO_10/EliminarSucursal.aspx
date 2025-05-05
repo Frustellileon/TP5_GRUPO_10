@@ -110,14 +110,15 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
+            </table>
+        </asp:Panel>
+        <asp:Panel ID="Panel2" runat="server">
+            <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style20">&nbsp;</td>
-                    <td class="auto-style22">&nbsp;</td>
-                    <td class="auto-style20">&nbsp;</td>
-                    <td class="auto-style27">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblConfirmacion" runat="server" ForeColor="Red"></asp:Label>
+                    </td>
                 </tr>
             </table>
         </asp:Panel>
