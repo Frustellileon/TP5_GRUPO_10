@@ -53,7 +53,6 @@ namespace TP5_GRUPO_10
                     lblMensaje.Text = "El filtro de busqueda pudo aplicarse correctamente.";
                 }
 
-                LimpiarCampos();
             }
         }
 
@@ -83,7 +82,6 @@ namespace TP5_GRUPO_10
                 {
                     lblMensaje.Text = "Se pudo acceder a los registros de la base de datos con éxito.";
                 }
-                LimpiarCampos();
             }
 
         }
@@ -108,9 +106,9 @@ namespace TP5_GRUPO_10
             }
         }
 
-        void LimpiarCampos()
-        {
-            txtIdSucursal.Text = string.Empty;
-        }
+        //void LimpiarCampos()
+        //{
+          //  txtIdSucursal.Text = string.Empty;
+        //}
     }
 }
