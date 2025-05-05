@@ -16,14 +16,17 @@
         .auto-style3 {
             width: 244px;
         }
-        .auto-style4 {
-            width: 47px;
-        }
-        .auto-style6 {
-            width: 269px;
-        }
         .auto-style7 {
-            width: 211px;
+            width: 170px;
+        }
+        .auto-style8 {
+            width: 230px;
+        }
+        .auto-style9 {
+            width: 202px;
+        }
+        .auto-style10 {
+            width: 173px;
         }
     </style>
 </head>
@@ -32,13 +35,14 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
                     <td class="auto-style7">
-                        <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="~/AgregarSucursal.aspx">AgregarSucursal</asp:HyperLink>
+                        <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
                     </td>
-                    <td class="auto-style6">
-                        <asp:HyperLink ID="hlListarSucursales" runat="server" NavigateUrl="~/ListadoSucursales.aspx">ListarSucursales</asp:HyperLink>
+                    <td class="auto-style9">
+                        <asp:HyperLink ID="hlListarSucursales" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado de Sucursales</asp:HyperLink>
                     </td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>

@@ -9,7 +9,7 @@ namespace TP5_GRUPO_10
 {
     public partial class EliminarSucursal : System.Web.UI.Page
     {
-        ClaseSQL claseSQL = new ClaseSQL();
+        private readonly ClaseSQL claseSQL = new ClaseSQL();
         protected void Page_Load(object sender, EventArgs e)
         {
 
