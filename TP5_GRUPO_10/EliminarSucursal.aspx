@@ -17,7 +17,7 @@
             width: 170px;
         }
         .auto-style8 {
-            width: 230px;
+            width: 251px;
         }
         .auto-style9 {
             width: 202px;
@@ -28,17 +28,17 @@
         .auto-style11 {
             width: 214px;
         }
-        .auto-style19 {
-            width: 10px;
-        }
         .auto-style20 {
             width: 150px;
         }
-        .auto-style21 {
-            width: 127px;
-        }
         .auto-style22 {
             width: 33px;
+        }
+        .auto-style25 {
+            width: 43px;
+        }
+        .auto-style26 {
+            width: 54px;
         }
     </style>
 </head>
@@ -89,10 +89,17 @@
                         <asp:Label ID="lblIngresarID" runat="server" Text="Ingresar ID Sucursal:"></asp:Label>
                     </td>
                     <td class="auto-style22">&nbsp;</td>
-                    <td class="auto-style20">&nbsp;</td>
-                    <td class="auto-style19">&nbsp;</td>
+                    <td class="auto-style20">
+                        <asp:TextBox ID="txtIngresarIdSucursal" runat="server" ValidationGroup="grupoEliminarSucursal" Width="165px"></asp:TextBox>
+                    </td>
+                    <td class="auto-style26">
+                        <asp:CustomValidator ID="cvSucursalNumeroNegativo_Cero" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID debe ser un número igual o mayor a 1." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvSucursalNumeroNegativo_Cero_ServerValidate">*</asp:CustomValidator>
+                        <asp:CustomValidator ID="cvNumeroFlotante" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID debe ser un número natural." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvNumeroFlotante_ServerValidate">*</asp:CustomValidator>
+                        <asp:CustomValidator ID="cvSucursalLetra" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID no puede contener letras." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvSucursalLetra_ServerValidate">*</asp:CustomValidator>
+                        <asp:CustomValidator ID="cvCaracteresEspeciales" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID no puede contener caracteres especiales." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvCaracteresEspeciales_ServerValidate">*</asp:CustomValidator>
+                    </td>
                     <td>
-                        <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" />
+                        <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" Width="89px" ValidationGroup="grupoEliminarSucursal" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -101,7 +108,7 @@
                     <td class="auto-style20">&nbsp;</td>
                     <td class="auto-style22">&nbsp;</td>
                     <td class="auto-style20">&nbsp;</td>
-                    <td class="auto-style19">&nbsp;</td>
+                    <td class="auto-style26">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -110,12 +117,13 @@
                     <td class="auto-style20">&nbsp;</td>
                     <td class="auto-style22">&nbsp;</td>
                     <td class="auto-style20">&nbsp;</td>
-                    <td class="auto-style19">&nbsp;</td>
+                    <td class="auto-style26">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
         </asp:Panel>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="grupoEliminarSucursal" />
     </form>
 </body>
 </html>
