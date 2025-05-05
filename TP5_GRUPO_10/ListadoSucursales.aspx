@@ -153,8 +153,13 @@
                 </tr>
             </table>
         </div>
+        <p>
+            <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+        </p>
         <asp:GridView ID="gvSucursales" runat="server" >
         </asp:GridView>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>

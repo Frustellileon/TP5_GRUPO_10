@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 namespace TP5_GRUPO_10
 {
     public partial class ListadoSucursales : System.Web.UI.Page
-    { 
+    {
         private const string consultaSQL = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal = Id_Provincia";
         private readonly ClaseSQL claseSQL = new ClaseSQL();
 
@@ -22,10 +22,10 @@ namespace TP5_GRUPO_10
             {
                 // Abro la conexion
                 claseSQL.AbrirConexion();
-                
+
                 // Ejecuto la consulta enviandola al metodo como parametro
                 gvSucursales.DataSource = claseSQL.CargarGridView(consultaSQL).Tables[0];
-                
+
                 // Muestro la tabla con DataBind
                 gvSucursales.DataBind();
 
@@ -41,12 +41,48 @@ namespace TP5_GRUPO_10
 
             gvSucursales.DataSource = claseSQL.FiltrarSucursalPorId(consultaSQL, idSucursal).Tables[0];
             gvSucursales.DataBind();
+
+            if (gvSucursales.Rows.Count == 0)
+            {
+                lblMensaje.Text = "No fue posible aplicar el filtro de busqueda.";
+            }
+            else
+            { 
+                lblMensaje.Text = "El filtro de busqueda pudo aplicarse correctamente.";
+            }
+
+            LimpiarCampos();
         }
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
         {
-            gvSucursales.DataSource = claseSQL.CargarGridView(consultaSQL).Tables[0];
-            gvSucursales.DataBind();
+            if (txtIdSucursal.Text != string.Empty)
+            {
+                lblMensaje.Text = "Vacie el campo de busqueda y vuelva a intentarlo.";
+            }
+            else if (gvSucursales.Rows.Count != 0 && gvSucursales.Rows.Count != 1)
+            {
+                lblMensaje.Text = "Ya se estan mostrando todos los registros dentro de la base.";
+
+            }
+
+            else
+            {
+
+                gvSucursales.DataSource = claseSQL.CargarGridView(consultaSQL).Tables[0];
+                gvSucursales.DataBind();
+
+                if (gvSucursales.Rows.Count == 0)
+                {
+                    lblMensaje.Text = "No fue posible acceder a los registros de la base de datos.";
+                }
+                else
+                {
+                    lblMensaje.Text = "Se pudo acceder a los registros de la base de datos con exito.";
+                }
+                LimpiarCampos();
+            }
+
         }
 
         protected void cv_IsInexistente_ServerValidate(System.Object source, System.Web.UI.WebControls.ServerValidateEventArgs args)
@@ -67,6 +103,11 @@ namespace TP5_GRUPO_10
             {
                 args.IsValid = true;
             }
+        }
+
+        void LimpiarCampos()
+        {
+            txtIdSucursal.Text = string.Empty;
         }
     }
 }

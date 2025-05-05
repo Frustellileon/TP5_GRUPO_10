@@ -24,6 +24,7 @@ namespace TP5_GRUPO_10
             {
                 CargarProvincias();
             }
+
         }
         
         private void CargarProvincias()
@@ -55,13 +56,14 @@ namespace TP5_GRUPO_10
             if (filasAfectadas == 1)
             {
                 lblMensaje.Text = "Sucursal agregada correctamente";
-                LimpiarCampos();
 
             }
             else
             {
-            
+               lblMensaje.Text = "La sucursal no a podido agregarse correctamente";
             }
+
+            LimpiarCampos();
         }
 
         protected void LimpiarCampos()
