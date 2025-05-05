@@ -16,6 +16,8 @@ namespace TP5_GRUPO_10
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            System.Web.UI.ValidationSettings.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
+
             if (!IsPostBack)
             {
                 // Ejecuto la consulta enviandola al metodo como parametro

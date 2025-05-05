@@ -77,13 +77,13 @@ namespace TP5_GRUPO_10
         public DataSet FiltrarSucursalPorId(string consulta, string idSucursal)
         {
             consulta += " WHERE Id_Sucursal = '" + idSucursal + "'";
-            
-            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
-            DataSet ds = new DataSet();
 
             AbrirConexion();
+
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+            DataSet ds = new DataSet();
             
-            adaptador.Fill(dataSet);
+            adaptador.Fill(ds);
             
             CerrarConexion();
 
@@ -91,5 +91,3 @@ namespace TP5_GRUPO_10
         }
     }
 }
-
-
