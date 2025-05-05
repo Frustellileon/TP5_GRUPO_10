@@ -12,8 +12,8 @@ namespace TP5_GRUPO_10
     public partial class AgregarSucursal : System.Web.UI.Page
     {
 
-        int filasAfectadas;
-        ClaseSQL claseSQL = new ClaseSQL();  // instancia global de la clase para toda la página
+        private int filasAfectadas;
+        private readonly ClaseSQL claseSQL = new ClaseSQL();  // instancia global de la clase para toda la página
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -47,9 +47,9 @@ namespace TP5_GRUPO_10
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
             //Variables SQL necesarias
-            ClaseSQL conexion = new ClaseSQL();
+            
             string consulta = "Insert into Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES ('" + txtNombreSucursal.Text + "', '" + txtDescripcion.Text + "', " + ddlProvincias.SelectedValue + ", '" + txtDireccion.Text + "')";
-            filasAfectadas = conexion.ejecutarConsulta(consulta);
+            filasAfectadas = claseSQL.ejecutarConsulta(consulta);
 
             //Pregunto si se ejecutaron los cambios
             if (filasAfectadas == 1)

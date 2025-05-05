@@ -66,23 +66,25 @@ namespace TP5_GRUPO_10
         public SqlDataReader EjecutarConsultaLectura(string consulta)
         {
             AbrirConexion();
+            
             sqlCommand = new SqlCommand(consulta, conexion);
             sqlDataReader = sqlCommand.ExecuteReader();
+
             return sqlDataReader;
         }
 
 
-        public DataSet FiltrarSucursalPorId(string idSucursal)
+        public DataSet FiltrarSucursalPorId(string consulta, string idSucursal)
         {
-            string consulta = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion " +
-                              "FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal = Id_Provincia " +
-                              "WHERE Id_Sucursal = " + idSucursal;
-
+            consulta += " WHERE Id_Sucursal = '" + idSucursal + "'";
+            
             SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
             DataSet ds = new DataSet();
 
             AbrirConexion();
-            adaptador.Fill(ds);
+            
+            adaptador.Fill(dataSet);
+            
             CerrarConexion();
 
             return ds;
