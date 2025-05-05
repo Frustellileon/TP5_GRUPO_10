@@ -34,9 +34,6 @@
         .auto-style22 {
             width: 33px;
         }
-        .auto-style26 {
-            width: 54px;
-        }
         .auto-style27 {
             width: 107px;
         }

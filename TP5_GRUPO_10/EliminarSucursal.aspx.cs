@@ -19,18 +19,20 @@ namespace TP5_GRUPO_10
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            int resultadoOperacion = claseSQL.EliminarDato(txtIngresarIdSucursal.Text);
-            if (resultadoOperacion == 1)
+            if (Page.IsValid)
             {
-                //Incorporacion de label con mensaje exitoso (no correspondia a mi aporte).
+                int resultadoOperacion = claseSQL.EliminarDato(txtIngresarIdSucursal.Text);
+                if (resultadoOperacion == 1)
+                {
+                   
+                }
+                else
+                {
+                   
+                }
+                // Limpio el textbox
+                txtIngresarIdSucursal.Text = string.Empty;
             }
-            else
-            {
-                //Incorporacion de label con mensaje de falla (no correspondia a mi aporte).
-            }
-            // Limpio el textbox
-            txtIngresarIdSucursal.Text = string.Empty;
-
 
         }
 
@@ -85,7 +87,6 @@ namespace TP5_GRUPO_10
         {
             if (Page.IsValid)
             {
-
                 if (!claseSQL.IdSucursal_Existe(Convert.ToInt32(txtIngresarIdSucursal.Text)))
                 {
                     args.IsValid = false;

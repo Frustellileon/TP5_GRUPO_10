@@ -39,19 +39,22 @@ namespace TP5_GRUPO_10
         {
             string idSucursal = txtIdSucursal.Text;
 
-            gvSucursales.DataSource = claseSQL.FiltrarSucursalPorId(consultaSQL, idSucursal).Tables[0];
-            gvSucursales.DataBind();
-
-            if (gvSucursales.Rows.Count == 0)
+            if (Page.IsValid)
             {
-                lblMensaje.Text = "No fue posible aplicar el filtro de busqueda.";
-            }
-            else
-            { 
-                lblMensaje.Text = "El filtro de busqueda pudo aplicarse correctamente.";
-            }
+                gvSucursales.DataSource = claseSQL.FiltrarSucursalPorId(consultaSQL, idSucursal).Tables[0];
+                gvSucursales.DataBind();
 
-            LimpiarCampos();
+                if (gvSucursales.Rows.Count == 0)
+                {
+                    lblMensaje.Text = "No fue posible aplicar el filtro de busqueda.";
+                }
+                else
+                {
+                    lblMensaje.Text = "El filtro de busqueda pudo aplicarse correctamente.";
+                }
+
+                LimpiarCampos();
+            }
         }
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
@@ -85,7 +88,7 @@ namespace TP5_GRUPO_10
 
         }
 
-        protected void cv_IsInexistente_ServerValidate(System.Object source, System.Web.UI.WebControls.ServerValidateEventArgs args)
+        protected void  cv_IsInexistente_ServerValidate(object source, ServerValidateEventArgs args)
         {
             if (rev_VNumerico.IsValid)
             {
