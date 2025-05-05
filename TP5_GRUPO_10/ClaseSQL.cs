@@ -103,7 +103,9 @@ namespace TP5_GRUPO_10
             return resultado;
         }
 
-        //Validaciones Ejercicio 2 (Es numerico e ID existente) - Se incorpora en la ClaseSQL el metodo para validar existencia de ID .
+
+=======
+>>>>>>> Validaciones Ejercicio 2 (Es numerico e ID existente) - Se incorpora en la ClaseSQL el metodo para validar existencia de ID .
         public bool IdSucursal_Existe(int ID)
         {
             bool existe = false;
