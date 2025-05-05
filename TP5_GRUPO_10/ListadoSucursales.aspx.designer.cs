@@ -87,21 +87,22 @@ namespace TP5_GRUPO_10
         protected global::System.Web.UI.WebControls.Button btnFiltrar;
 
         /// <summary>
-<<<<<<< HEAD
         /// Control btnMostrarTodos.
-=======
-        /// Control ValidationSummary1.
->>>>>>> Modificaciones genenerales
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Button btnMostrarTodos;
-=======
+
+        /// <summary>
+        /// Control ValidationSummary1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
->>>>>>> Modificaciones genenerales
 
         /// <summary>
         /// Control gvSucursales.

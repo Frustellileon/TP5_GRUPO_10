@@ -13,19 +13,16 @@
         .auto-style2 {
             height: 23px;
         }
-        .auto-style3 {
-            width: 260px;
-        }
         .auto-style4 {
             height: 23px;
-            width: 260px;
+            width: 290px;
         }
         .auto-style5 {
-            width: 150px;
+            width: 259px;
         }
         .auto-style6 {
             height: 23px;
-            width: 150px;
+            width: 259px;
         }
         .auto-style7 {
             width: 10px;
@@ -45,11 +42,11 @@
             width: 170px;
         }
         .auto-style12 {
-            width: 260px;
+            width: 290px;
             height: 30px;
         }
         .auto-style13 {
-            width: 150px;
+            width: 259px;
             height: 30px;
         }
         .auto-style14 {
@@ -62,6 +59,9 @@
         }
         .auto-style16 {
             height: 30px;
+        }
+        .auto-style17 {
+            width: 290px;
         }
     </style>
 </head>
@@ -83,17 +83,16 @@
                     <td class="auto-style4">
                         <asp:Label ID="lblTitulo" runat="server" Font-Bold="True" Font-Size="20pt" Text="Listado de sucursales"></asp:Label>
                     </td>
-                    <td class="auto-style6"></td>
+                    <td class="auto-style6">&nbsp;</td>
                     <td class="auto-style8"></td>
                     <td class="auto-style10"></td>
                     <td class="auto-style2">
-                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="Filtro" />
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
@@ -102,18 +101,16 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style12">Búsqueda ingrese ID sucursal:</td>
+                    <td class="auto-style12">Búsqueda ingrese ID sucursal:&nbsp; </td>
                     <td class="auto-style13">
                         <asp:TextBox ID="txtIdSucursal" runat="server" ValidationGroup="Filtro"></asp:TextBox>
-                    </td>
-                    <td class="auto-style14">
-                        <asp:RequiredFieldValidator ID="rfvIdSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="Para usar el filtro debe añadir un valor al campo ID sucursal." ValidationGroup="Filtro">*</asp:RequiredFieldValidator>
+                    &nbsp;<asp:RequiredFieldValidator ID="rfvIdSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="Para usar el filtro debe añadir un valor al campo ID sucursal." ValidationGroup="Filtro">*</asp:RequiredFieldValidator>
+                    &nbsp;<asp:CustomValidator ID="cv_IdInexistente" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="El ID ingresado no existe." OnServerValidate="cv_IsInexistente_ServerValidate" ValidationGroup="Filtro">*</asp:CustomValidator>
+&nbsp;<asp:RegularExpressionValidator ID="rev_VNumerico" runat="server" ControlToValidate="txtIdSucursal" ValidationExpression="^[0-9]+$" ValidationGroup="Filtro" ErrorMessage="El ID deve ser numerico.">*</asp:RegularExpressionValidator>
                     </td>
                     <td class="auto-style15">
-                        &nbsp;&nbsp;<asp:CustomValidator ID="cv_IdInexistente" runat="server" ControlToValidate="txtIdSucursal" Display="Dynamic" ErrorMessage="El ID ingresado no existe." OnServerValidate="cv_IsInexistente_ServerValidate" ValidationGroup="Filtro">*</asp:CustomValidator>
-&nbsp;
-                        <asp:RegularExpressionValidator ID="rev_VNumerico" runat="server" ControlToValidate="tb_BuscarS" Display="Dynamic" ValidationExpression="^[0-9]+$" ValidationGroup="Filtro" ErrorMessage="El ID deve ser numerico.">*</asp:RegularExpressionValidator>
-                    </td>
+                        &nbsp;&nbsp;&nbsp;
+                        </td>
                     <td class="auto-style16">
                         <asp:Button ID="btnFiltrar" runat="server" OnClick="btnFiltrar_Click" Text="Filtrar" ValidationGroup="Filtro" Width="69px" />
                     </td>
@@ -124,7 +121,9 @@
                 </tr>
                 <tr>
                     <td class="auto-style4"></td>
-                    <td class="auto-style6"></td>
+                    <td class="auto-style6">
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Filtro" style="margin-left: 0px" Width="229px" />
+                    </td>
                     <td class="auto-style8"></td>
                     <td class="auto-style10"></td>
                     <td class="auto-style2"></td>
@@ -132,7 +131,7 @@
                     <td class="auto-style2"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
