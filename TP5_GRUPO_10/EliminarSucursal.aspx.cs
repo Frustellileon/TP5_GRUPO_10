@@ -35,10 +35,7 @@ namespace TP5_GRUPO_10
                 args.IsValid = false;
                             
             else           
-                args.IsValid = true;
-               
-            
-                
+                args.IsValid = true;                                           
             
         }
 
@@ -127,9 +124,9 @@ namespace TP5_GRUPO_10
         }
         private bool contieneCaracteresEspeciales(string ingreso)
         {
-            decimal resultado = esNumeroNegativo_Cero(ingreso);
+            int resultado = esNumeroNegativo_Cero(ingreso);
             
-            if (resultado == -1 || resultado == -2)
+            if (resultado == -1)
                 return false;
 
 
