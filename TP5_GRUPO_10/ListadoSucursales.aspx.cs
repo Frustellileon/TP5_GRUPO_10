@@ -12,7 +12,7 @@ namespace TP5_GRUPO_10
     public partial class ListadoSucursales : System.Web.UI.Page
     { 
         private string consultaSQL = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal = Id_Provincia";
-
+        ClaseSQL claseSQL = new ClaseSQL();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -39,14 +39,12 @@ namespace TP5_GRUPO_10
         {
             string idSucursal = txtIdSucursal.Text;
 
-            ClaseSQL claseSQL = new ClaseSQL();
             gvSucursales.DataSource = claseSQL.FiltrarSucursalPorId(idSucursal).Tables[0];
             gvSucursales.DataBind();
         }
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
         {
-            ClaseSQL claseSQL = new ClaseSQL();
             claseSQL.AbrirConexion();
 
             gvSucursales.DataSource = claseSQL.CargarGridView(consultaSQL).Tables[0];
