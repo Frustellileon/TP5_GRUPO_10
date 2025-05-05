@@ -93,6 +93,8 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style4">
+                        <br />
+                        <br />
                         <asp:Label ID="lblTitulo" runat="server" Font-Bold="True" Font-Size="20pt" Text="Listado de sucursales"></asp:Label>
                     </td>
                     <td class="auto-style6">&nbsp;</td>
@@ -128,6 +130,7 @@
                     </td>
                     <td class="auto-style16">
                         <asp:Button ID="btnMostrarTodos" runat="server" OnClick="btnMostrarTodos_Click" Text="Mostrar todos" />
+                    &nbsp;
                     </td>
                     <td class="auto-style16"></td>
                 </tr>
