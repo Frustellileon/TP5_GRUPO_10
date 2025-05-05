@@ -58,9 +58,9 @@ namespace TP5_GRUPO_10
         }
         public static bool contieneCaracteresEspeciales(string ingreso)
         {
-            decimal resultado = esNumeroNegativo_Cero(ingreso);
+            int resultado = esNumeroNegativo_Cero(ingreso);
 
-            if (resultado == -1 || resultado == -2)
+            if (resultado == -1)
                 return false;
 
 
