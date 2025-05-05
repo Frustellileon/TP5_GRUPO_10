@@ -55,8 +55,6 @@ namespace TP5_GRUPO_10
             if (filasAfectadas == 1)
             {
                 lblMensaje.Text = "Sucursal agregada correctamente";
-            }
-
                 LimpiarCampos();
 
             }
