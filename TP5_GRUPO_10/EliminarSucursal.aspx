@@ -19,11 +19,11 @@
         .auto-style4 {
             width: 47px;
         }
-        .auto-style5 {
-            width: 296px;
-        }
         .auto-style6 {
             width: 269px;
+        }
+        .auto-style7 {
+            width: 211px;
         }
     </style>
 </head>
@@ -33,10 +33,12 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style5">
+                    <td class="auto-style7">
                         <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="~/AgregarSucursal.aspx">AgregarSucursal</asp:HyperLink>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style6">
+                        <asp:HyperLink ID="hlListarSucursales" runat="server" NavigateUrl="~/ListadoSucursales.aspx">ListarSucursales</asp:HyperLink>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
