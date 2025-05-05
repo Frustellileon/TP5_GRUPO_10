@@ -71,7 +71,6 @@ namespace TP5_GRUPO_10
             return sqlDataReader;
         }
 
-
         public DataSet FiltrarSucursalPorId(string idSucursal)
         {
             string consulta = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion " +
@@ -86,6 +85,18 @@ namespace TP5_GRUPO_10
             CerrarConexion();
 
             return ds;
+        }
+
+        public void EliminarDato(string idSucursal)
+        {
+            //Abro coneccion
+            AbrirConexion();
+            //Mando el comando que quiero que ejecute (borrar con el dato recibido)
+            sqlCommand = new SqlCommand("DELETE FROM Sucursal WHERE Id_Sucursal = " + idSucursal.Trim(), conexion);
+            //Ejecuto la consulta
+            sqlCommand.ExecuteNonQuery();
+            //Cierro coneccion
+            CerrarConexion();
         }
     }
 }
