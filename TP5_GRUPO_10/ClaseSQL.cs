@@ -11,12 +11,12 @@ namespace TP5_GRUPO_10
     public class ClaseSQL
     {
         ///Atributos de la clase
-        private string cadenaConexion = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"; 
-        private SqlConnection conexion;
+        private const string cadenaConexion = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"; 
+        private readonly SqlConnection conexion;
         private SqlCommand sqlCommand;
         private SqlDataReader sqlDataReader;
-        private SqlDataAdapter sqlDataAdapter;
-        private DataSet dataSet;
+        private readonly SqlDataAdapter sqlDataAdapter;
+        private readonly DataSet dataSet;
         private bool estado = false; //Serviria como control para saber si la conexion esta abierta o cerrada
         private int filasAfectadas;
 
@@ -63,7 +63,6 @@ namespace TP5_GRUPO_10
             
         }
 
-<<<<<<< HEAD
         public SqlDataReader EjecutarConsultaLectura(string consulta)
         {
             AbrirConexion();
@@ -104,9 +103,7 @@ namespace TP5_GRUPO_10
             return resultado;
         }
 
-
-=======
->>>>>>> Validaciones Ejercicio 2 (Es numerico e ID existente) - Se incorpora en la ClaseSQL el metodo para validar existencia de ID .
+        //Validaciones Ejercicio 2 (Es numerico e ID existente) - Se incorpora en la ClaseSQL el metodo para validar existencia de ID .
         public bool IdSucursal_Existe(int ID)
         {
             bool existe = false;

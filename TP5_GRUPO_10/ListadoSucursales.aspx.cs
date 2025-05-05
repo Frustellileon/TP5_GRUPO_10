@@ -11,7 +11,6 @@ namespace TP5_GRUPO_10
 {
     public partial class ListadoSucursales : System.Web.UI.Page
     { 
-//<<<<<<< HEAD
         private const string consultaSQL = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal = Id_Provincia";
         private readonly ClaseSQL claseSQL = new ClaseSQL();
 
@@ -21,8 +20,6 @@ namespace TP5_GRUPO_10
 
             if (!IsPostBack)
             {
-//<<<<<<< HEAD
-//=======
                 // Abro la conexion
                 claseSQL.AbrirConexion();
                 

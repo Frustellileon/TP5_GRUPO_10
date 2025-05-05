@@ -25,7 +25,7 @@ namespace TP5_GRUPO_10
                 CargarProvincias();
             }
         }
-
+        
         private void CargarProvincias()
         {
             string consulta = "SELECT Id_Provincia, DescripcionProvincia FROM Provincia ORDER BY DescripcionProvincia";
