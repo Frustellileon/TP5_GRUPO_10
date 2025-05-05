@@ -34,11 +34,8 @@
         .auto-style22 {
             width: 33px;
         }
-        .auto-style25 {
-            width: 43px;
-        }
-        .auto-style26 {
-            width: 54px;
+        .auto-style27 {
+            width: 107px;
         }
     </style>
 </head>
@@ -92,11 +89,12 @@
                     <td class="auto-style20">
                         <asp:TextBox ID="txtIngresarIdSucursal" runat="server" ValidationGroup="grupoEliminarSucursal" Width="165px"></asp:TextBox>
                     </td>
-                    <td class="auto-style26">
-                        <asp:CustomValidator ID="cvSucursalNumeroNegativo_Cero" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID debe ser un número igual o mayor a 1." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvSucursalNumeroNegativo_Cero_ServerValidate">*</asp:CustomValidator>
-                        <asp:CustomValidator ID="cvNumeroFlotante" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID debe ser un número natural." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvNumeroFlotante_ServerValidate">*</asp:CustomValidator>
-                        <asp:CustomValidator ID="cvSucursalLetra" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID no puede contener letras." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvSucursalLetra_ServerValidate">*</asp:CustomValidator>
-                        <asp:CustomValidator ID="cvCaracteresEspeciales" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID no puede contener caracteres especiales." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvCaracteresEspeciales_ServerValidate">*</asp:CustomValidator>
+                    <td class="auto-style27">
+                        <asp:CustomValidator ID="cvSucursalNumeroNegativo_Cero" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID debe ser un número igual o mayor a 1." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvSucursalNumeroNegativo_Cero_ServerValidate" Display="Dynamic">*</asp:CustomValidator>
+                        <asp:CustomValidator ID="cvNumeroFlotante" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID debe ser un número natural." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvNumeroFlotante_ServerValidate" Display="Dynamic">*</asp:CustomValidator>
+                        <asp:CustomValidator ID="cvSucursalLetra" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID no puede contener letras." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvSucursalLetra_ServerValidate" Display="Dynamic">*</asp:CustomValidator>
+                        <asp:CustomValidator ID="cvCaracteresEspeciales" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID no puede contener caracteres especiales." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvCaracteresEspeciales_ServerValidate" Display="Dynamic">*</asp:CustomValidator>
+                        <asp:CustomValidator ID="cv_IdInexistente" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID ingresado no existe." OnServerValidate="cv_IdInexistente_ServerValidate" ValidationGroup="grupoEliminarSucursal" Display="Dynamic">*</asp:CustomValidator>
                     </td>
                     <td>
                         <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" Width="89px" ValidationGroup="grupoEliminarSucursal" />
@@ -108,7 +106,7 @@
                     <td class="auto-style20">&nbsp;</td>
                     <td class="auto-style22">&nbsp;</td>
                     <td class="auto-style20">&nbsp;</td>
-                    <td class="auto-style26">&nbsp;</td>
+                    <td class="auto-style27">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -117,7 +115,7 @@
                     <td class="auto-style20">&nbsp;</td>
                     <td class="auto-style22">&nbsp;</td>
                     <td class="auto-style20">&nbsp;</td>
-                    <td class="auto-style26">&nbsp;</td>
+                    <td class="auto-style27">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>

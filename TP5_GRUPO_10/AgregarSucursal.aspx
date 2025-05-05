@@ -149,9 +149,7 @@
                     <td>
                         <asp:TextBox ID="txtNombreSucursal" runat="server" ValidationGroup="GrupoA"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal" Display="Dynamic" ErrorMessage="Ingrese un nombre de sucursal." ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
-                    &nbsp;
                         <asp:RegularExpressionValidator ID="revNombreS_valido" runat="server" ControlToValidate="txtNombreSucursal" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado contiene caracteres invalidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ '.\-]+$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
-&nbsp;
                         <asp:RegularExpressionValidator ID="revNombreS_largo" runat="server" ControlToValidate="txtNombreSucursal" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado es demaciado corto/largo." ValidationExpression="^[\s\S]{3,50}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
                     </td>
                     <td>&nbsp;</td>
@@ -163,9 +161,7 @@
                     <td>
                         <asp:TextBox ID="txtDescripcion" runat="server" Height="33px" TextMode="MultiLine" Width="128px" ValidationGroup="GrupoA"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="Ingrese una descripcion." ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
-                    &nbsp;
                         <asp:RegularExpressionValidator ID="revDescripcion_valido" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="La descripcion ingresada contiene caracteres invalidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ .,;'\-()]+$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
-&nbsp;
                         <asp:RegularExpressionValidator ID="revDescripcion_largo" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="La descripcion ingresada es demaciado corta/larga." ValidationExpression="^[\s\S]{4,200}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
                     </td>
                     <td>&nbsp;</td>
@@ -188,9 +184,7 @@
                     <td>
                         <asp:TextBox ID="txtDireccion" runat="server" ValidationGroup="GrupoA"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="Ingrese una direccion." ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
-                    &nbsp;
                         <asp:RegularExpressionValidator ID="revDireccion_valida" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="La dirección ingresada solo puede contener letras, números, espacios, comas, puntos o guiones, y debe incluir al menos un número." ValidationExpression="^(?=.*\d)[a-zA-Z0-9\s,.-]+$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
-&nbsp;
                         <asp:RegularExpressionValidator ID="revDireccion_largo" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="La direccion ingresada es demacioado corta/larga." ValidationExpression="^[\s\S]{5,100}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
                     </td>
                     <td>&nbsp;</td>

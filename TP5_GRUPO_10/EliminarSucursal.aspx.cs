@@ -19,11 +19,21 @@ namespace TP5_GRUPO_10
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+            if (Page.IsValid)
+            {
+                int resultadoOperacion = claseSQL.EliminarDato(txtIngresarIdSucursal.Text);
+                if (resultadoOperacion == 1)
+                {
+                   
+                }
+                else
+                {
+                   
+                }
+                // Limpio el textbox
+                txtIngresarIdSucursal.Text = string.Empty;
+            }
 
-
-            // Limpio el textbox
-            //txtIngresarIdSucursal.Text = "";
         }
 
         protected void cvSucursalLetra_ServerValidate(object source, ServerValidateEventArgs args)
@@ -73,6 +83,23 @@ namespace TP5_GRUPO_10
 
         }
 
-        
+        protected void cv_IdInexistente_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (Page.IsValid)
+            {
+                if (!claseSQL.IdSucursal_Existe(Convert.ToInt32(txtIngresarIdSucursal.Text)))
+                {
+                    args.IsValid = false;
+                }
+                else
+                {
+                    args.IsValid = true;
+                }
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
     }
 }

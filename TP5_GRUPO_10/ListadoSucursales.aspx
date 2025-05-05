@@ -93,6 +93,8 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style4">
+                        <br />
+                        <br />
                         <asp:Label ID="lblTitulo" runat="server" Font-Bold="True" Font-Size="20pt" Text="Listado de sucursales"></asp:Label>
                     </td>
                     <td class="auto-style6">&nbsp;</td>
@@ -116,9 +118,9 @@
                     <td class="auto-style12">Búsqueda ingrese ID sucursal:&nbsp; </td>
                     <td class="auto-style13">
                         <asp:TextBox ID="txtIdSucursal" runat="server" ValidationGroup="Filtro"></asp:TextBox>
-                    &nbsp;<asp:RequiredFieldValidator ID="rfvIdSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="Para usar el filtro debe añadir un valor al campo ID sucursal." ValidationGroup="Filtro">*</asp:RequiredFieldValidator>
-                    &nbsp;<asp:CustomValidator ID="cv_IdInexistente" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="El ID ingresado no existe." OnServerValidate="cv_IsInexistente_ServerValidate" ValidationGroup="Filtro">*</asp:CustomValidator>
-&nbsp;<asp:RegularExpressionValidator ID="rev_VNumerico" runat="server" ControlToValidate="txtIdSucursal" ValidationExpression="^[0-9]+$" ValidationGroup="Filtro" ErrorMessage="El ID deve ser numerico.">*</asp:RegularExpressionValidator>
+                    &nbsp;<asp:RequiredFieldValidator ID="rfvIdSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="Para usar el filtro debe añadir un valor al campo ID sucursal." ValidationGroup="Filtro" Display="Dynamic">*</asp:RequiredFieldValidator>
+                        <asp:CustomValidator ID="cv_IdInexistente" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="El ID ingresado no existe." OnServerValidate="cv_IsInexistente_ServerValidate" ValidationGroup="Filtro" Display="Dynamic">*</asp:CustomValidator>
+                        <asp:RegularExpressionValidator ID="rev_VNumerico" runat="server" ControlToValidate="txtIdSucursal" ValidationExpression="^[0-9]+$" ValidationGroup="Filtro" ErrorMessage="El ID deve ser numerico." Display="Dynamic">*</asp:RegularExpressionValidator>
                     </td>
                     <td class="auto-style15">
                         &nbsp;&nbsp;&nbsp;
@@ -128,6 +130,7 @@
                     </td>
                     <td class="auto-style16">
                         <asp:Button ID="btnMostrarTodos" runat="server" OnClick="btnMostrarTodos_Click" Text="Mostrar todos" />
+                    &nbsp;
                     </td>
                     <td class="auto-style16"></td>
                 </tr>
