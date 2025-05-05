@@ -95,6 +95,7 @@
                         <asp:CustomValidator ID="cvSucursalLetra" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID no puede contener letras." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvSucursalLetra_ServerValidate" Display="Dynamic">*</asp:CustomValidator>
                         <asp:CustomValidator ID="cvCaracteresEspeciales" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID no puede contener caracteres especiales." ValidationGroup="grupoEliminarSucursal" OnServerValidate="cvCaracteresEspeciales_ServerValidate" Display="Dynamic">*</asp:CustomValidator>
                         <asp:CustomValidator ID="cv_IdInexistente" runat="server" ControlToValidate="txtIngresarIdSucursal" ErrorMessage="El ID ingresado no existe." OnServerValidate="cv_IdInexistente_ServerValidate" ValidationGroup="grupoEliminarSucursal" Display="Dynamic">*</asp:CustomValidator>
+                        <asp:RequiredFieldValidator ID="rfvTxtIngresarId" runat="server" ControlToValidate="txtIngresarIdSucursal" Display="Dynamic" ErrorMessage="El ingreso no puede quedar vacío" ValidationGroup="grupoEliminarSucursal">*</asp:RequiredFieldValidator>
                     </td>
                     <td>
                         <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" Width="89px" ValidationGroup="grupoEliminarSucursal" />
