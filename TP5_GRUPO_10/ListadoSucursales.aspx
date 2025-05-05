@@ -25,18 +25,18 @@
             width: 259px;
         }
         .auto-style7 {
-            width: 10px;
+            width: 53px;
         }
         .auto-style8 {
             height: 23px;
-            width: 10px;
+            width: 53px;
         }
         .auto-style9 {
-            width: 85px;
+            width: 80px;
         }
         .auto-style10 {
             height: 23px;
-            width: 85px;
+            width: 80px;
         }
         .auto-style11 {
             width: 170px;
@@ -49,12 +49,8 @@
             width: 259px;
             height: 30px;
         }
-        .auto-style14 {
-            width: 10px;
-            height: 30px;
-        }
         .auto-style15 {
-            width: 85px;
+            width: 53px;
             height: 30px;
         }
         .auto-style16 {
@@ -62,6 +58,10 @@
         }
         .auto-style17 {
             width: 290px;
+        }
+        .auto-style18 {
+            height: 30px;
+            width: 80px;
         }
     </style>
 </head>
@@ -111,7 +111,7 @@
                     <td class="auto-style15">
                         &nbsp;&nbsp;&nbsp;
                         </td>
-                    <td class="auto-style16">
+                    <td class="auto-style18">
                         <asp:Button ID="btnFiltrar" runat="server" OnClick="btnFiltrar_Click" Text="Filtrar" ValidationGroup="Filtro" Width="69px" />
                     </td>
                     <td class="auto-style16">
