@@ -85,21 +85,7 @@ namespace TP5_GRUPO_10
 
         protected void cv_IdInexistente_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            if (Page.IsValid)
-            {
-                if (!claseSQL.IdSucursal_Existe(Convert.ToInt32(txtIngresarIdSucursal.Text)))
-                {
-                    args.IsValid = false;
-                }
-                else
-                {
-                    args.IsValid = true;
-                }
-            }
-            else
-            {
-                args.IsValid = true;
-            }
+            Validacion.IDExistente(Page, source, args, txtIngresarIdSucursal.Text, claseSQL);
         }
     }
 }
