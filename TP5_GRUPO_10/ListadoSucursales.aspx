@@ -122,7 +122,7 @@
                         <asp:TextBox ID="txtIdSucursal" runat="server" ValidationGroup="Filtro"></asp:TextBox>
                     &nbsp;<asp:RequiredFieldValidator ID="rfvIdSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="Para usar el filtro debe añadir un valor al campo ID sucursal." ValidationGroup="Filtro" Display="Dynamic">*</asp:RequiredFieldValidator>
                         <asp:CustomValidator ID="cv_IdInexistente" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="El ID ingresado no existe." OnServerValidate="cv_IsInexistente_ServerValidate" ValidationGroup="Filtro" Display="Dynamic">*</asp:CustomValidator>
-                        <asp:RegularExpressionValidator ID="rev_VNumerico" runat="server" ControlToValidate="txtIdSucursal" ValidationExpression="^[0-9]+$" ValidationGroup="Filtro" ErrorMessage="El ID deve ser numerico." Display="Dynamic">*</asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="rev_VNumerico" runat="server" ControlToValidate="txtIdSucursal" ValidationExpression="^[0-9]+$" ValidationGroup="Filtro" ErrorMessage="El ID deve ser numerico (entero y positivo)." Display="Dynamic">*</asp:RegularExpressionValidator>
                     </td>
                     <td class="auto-style15">
                         &nbsp;&nbsp;&nbsp;
