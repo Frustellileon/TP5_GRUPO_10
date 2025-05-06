@@ -185,7 +185,7 @@
                         <asp:TextBox ID="txtDireccion" runat="server" ValidationGroup="GrupoA"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="Ingrese una direccion." ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="revDireccion_valida" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="La dirección ingresada solo puede contener letras, números, espacios, comas, puntos o guiones, y debe incluir al menos un número." ValidationExpression="^(?=.*\d)[a-zA-Z0-9\s,.-]+$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
-                        <asp:RegularExpressionValidator ID="revDireccion_largo" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="La direccion ingresada es demacioado corta/larga." ValidationExpression="^[\s\S]{5,100}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revDireccion_largo" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="La direccion ingresada es demasiado corta/larga." ValidationExpression="^[\s\S]{5,100}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

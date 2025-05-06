@@ -60,7 +60,7 @@ namespace TP5_GRUPO_10
             }
             else
             {
-               lblMensaje.Text = "La sucursal no a podido agregarse correctamente";
+               lblMensaje.Text = "La sucursal no ha podido agregarse correctamente";
             }
 
             LimpiarCampos();
