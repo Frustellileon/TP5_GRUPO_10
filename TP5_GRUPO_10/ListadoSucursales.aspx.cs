@@ -51,6 +51,7 @@ namespace TP5_GRUPO_10
                 else
                 {
                     lblMensaje.Text = "El filtro de busqueda pudo aplicarse correctamente.";
+                    txtIdSucursal.Text = string.Empty;
                 }
 
             }
@@ -81,6 +82,7 @@ namespace TP5_GRUPO_10
                 else
                 {
                     lblMensaje.Text = "Se pudo acceder a los registros de la base de datos con éxito.";
+                    txtIdSucursal.Text = string.Empty;
                 }
             }
 
