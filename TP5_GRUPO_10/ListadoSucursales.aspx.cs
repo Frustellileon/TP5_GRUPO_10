@@ -51,15 +51,10 @@ namespace TP5_GRUPO_10
                 else
                 {
                     lblMensaje.Text = "El filtro de busqueda pudo aplicarse correctamente.";
+                    txtIdSucursal.Text = string.Empty;
                 }
 
             }
-            else
-            {
-                lblMensaje.Text = "No fue posible aplicar el filtro de busqueda.";
-            }
-
-            txtIdSucursal.Text = string.Empty;
         }
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
@@ -86,17 +81,21 @@ namespace TP5_GRUPO_10
                 }
                 else
                 {
-                    lblMensaje.Text = "Se pudo acceder a los registros de la base de datos con éxito.";                    
+                    lblMensaje.Text = "Se pudo acceder a los registros de la base de datos con éxito.";
+                    txtIdSucursal.Text = string.Empty;
                 }
             }
 
-            txtIdSucursal.Text = string.Empty;
         }
 
         protected void  cv_IsInexistente_ServerValidate(object source, ServerValidateEventArgs args)
         {
             Validacion.IDExistente(Page, source, args, txtIdSucursal.Text, claseSQL);
         }
-       
+
+        //void LimpiarCampos()
+        //{
+          //  txtIdSucursal.Text = string.Empty;
+        //}
     }
 }
