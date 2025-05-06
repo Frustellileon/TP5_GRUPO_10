@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace TP5_GRUPO_10
 {
@@ -92,6 +94,25 @@ namespace TP5_GRUPO_10
             else
                 return false;
 
+        }
+
+        public static void IDExistente(Page page, object source, ServerValidateEventArgs args, string id, ClaseSQL claseSQL)
+        {
+            if (page.IsValid)
+            {
+                if (!claseSQL.IdSucursal_Existe(Convert.ToInt32(id)))
+                {
+                    args.IsValid = false;
+                }
+                else
+                {
+                    args.IsValid = true;
+                }
+            }
+            else
+            {
+                args.IsValid = true;
+            }
         }
     }
 }
